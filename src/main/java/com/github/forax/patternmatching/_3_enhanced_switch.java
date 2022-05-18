@@ -7,7 +7,7 @@ public interface _3_enhanced_switch {
   enum PEGI {
     PEGI12, PEGI16, PEGI18;
 
-    int year() {
+    public int year() {
       int year;
       switch (this) {
         case PEGI12 -> year = 12;
@@ -29,7 +29,7 @@ public interface _3_enhanced_switch {
     final String name;
     final PEGI rating;
 
-    VideoGame(String name, PEGI rating) {
+    public VideoGame(String name, PEGI rating) {
       this.name = Objects.requireNonNull(name);
       this.rating = Objects.requireNonNull(rating);
     }
@@ -50,7 +50,7 @@ public interface _3_enhanced_switch {
     final String id;
     final String universe;
 
-    ActionFigure(String id, String universe) {
+    public ActionFigure(String id, String universe) {
       this.id = Objects.requireNonNull(id);
       this.universe = Objects.requireNonNull(universe);
     }
@@ -70,7 +70,7 @@ public interface _3_enhanced_switch {
   class Box implements Item {
     final List<Item> items;
 
-    Box(List<Item> items) {
+    public Box(List<Item> items) {
       this.items = List.copyOf(items);
     }
 

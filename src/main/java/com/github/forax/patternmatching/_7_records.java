@@ -7,7 +7,7 @@ public interface _7_records {
   enum PEGI {
     PEGI12, PEGI16, PEGI18;
 
-    int year() {
+    public int year() {
       return switch (this) {
         case PEGI12 -> 12;
         case PEGI16 -> 16;

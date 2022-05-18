@@ -7,7 +7,7 @@ public interface _1_instanceof {
   enum PEGI {
     PEGI12, PEGI16, PEGI18;
 
-    int year() {
+    public int year() {
       int year;
       switch (this) {
         case PEGI12:
@@ -32,7 +32,7 @@ public interface _1_instanceof {
     final String name;
     final PEGI rating;
 
-    VideoGame(String name, PEGI rating) {
+    public VideoGame(String name, PEGI rating) {
       this.name = Objects.requireNonNull(name);
       this.rating = Objects.requireNonNull(rating);
     }
@@ -49,7 +49,7 @@ public interface _1_instanceof {
     final String id;
     final String universe;
 
-    ActionFigure(String id, String universe) {
+    public ActionFigure(String id, String universe) {
       this.id = Objects.requireNonNull(id);
       this.universe = Objects.requireNonNull(universe);
     }
@@ -64,7 +64,7 @@ public interface _1_instanceof {
   class Box implements Item {
     final List<Item> items;
 
-    Box(List<Item> items) {
+    public Box(List<Item> items) {
       this.items = List.copyOf(items);
     }
 
@@ -79,7 +79,7 @@ public interface _1_instanceof {
       return videoGame.rating().year() * 50;
     }
     if (item instanceof ActionFigure) {
-      var actionFigure = (_2_poo.ActionFigure) item;
+      var actionFigure = (ActionFigure) item;
       return actionFigure.universe().equals("Marvel")? 30: 20;
     }
     if (item instanceof Box) {
