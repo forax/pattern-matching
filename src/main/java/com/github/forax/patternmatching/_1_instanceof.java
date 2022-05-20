@@ -1,5 +1,7 @@
 package com.github.forax.patternmatching;
 
+import com.github.forax.patternmatching._0_gameshop.VideoGame;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -40,9 +42,22 @@ public interface _1_instanceof {
     public String name() {
       return name;
     }
-
     public PEGI rating() {
       return rating;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof _0_gameshop.VideoGame)) {
+        return false;
+      }
+      VideoGame videoGame = (VideoGame) obj;
+      return rating == videoGame.rating && name.equals(videoGame.name);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(name, rating);
     }
   }
   class ActionFigure implements Item {

@@ -1,5 +1,7 @@
 package com.github.forax.patternmatching;
 
+import com.github.forax.patternmatching._0_gameshop.VideoGame;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -39,15 +41,20 @@ public interface _5_enhanced_instanceof {
     }
 
     @Override
-    public int price() {
-      return rating.year() * 50;
-    }
-
-    @Override
     public boolean equals(Object obj) {
       return obj instanceof VideoGame videoGame
           && rating == videoGame.rating
           && name.equals(videoGame.name);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(name, rating);
+    }
+
+    @Override
+    public int price() {
+      return rating.year() * 50;
     }
   }
   class ActionFigure implements Item {
